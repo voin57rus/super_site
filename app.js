@@ -28,10 +28,9 @@ btn1.addEventListener("click", function(){
 btn2.addEventListener("click", function(){
     if (tg.MainButton.isVisible) {
         tg.MainButton.hide();
-    }
-    else {
-        tg.MainButton.setText("Вы выбрали товар 2");
-        item = "2";
+    } else {
+        tg.MainButton.setText("Ссылка на видео");
+        item = "https://youtu.be/S5IAs-wWKCA";
         tg.MainButton.show();
     }
 });
