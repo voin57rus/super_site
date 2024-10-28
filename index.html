@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="container">
 		<div class="inner">
 			<div class="item">
 				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn1">Add</button>
+				<button class="btn" id="btn1">Жми</button>
 			</div>
 			<div class="item">
 				<img src="2.png" alt="" class="img">
@@ -36,11 +36,94 @@
 		</div>
 	</div>
 	<div class="usercard" id="usercard">
-		
+		<!-- Сообщение "Привет" появится здесь -->
 	</div>
 
 	<script src="https://telegram.org/js/telegram-web-app.js"></script>
 	<script src="app.js"></script>
+	<script>
+		let tg = window.Telegram.WebApp;
+		tg.expand();
+
+		// Настройка MainButton цвета и текста
+		tg.MainButton.textColor = '#FFFFFF';
+		tg.MainButton.color = '#2cab37';
+
+		let item = "";
+
+		let btn1 = document.getElementById("btn1");
+		let btn2 = document.getElementById("btn2");
+		let btn3 = document.getElementById("btn3");
+		let btn4 = document.getElementById("btn4");
+		let btn5 = document.getElementById("btn5");
+		let btn6 = document.getElementById("btn6");
+
+		btn1.addEventListener("click", function(){
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText("Вы выбрали товар 1");
+				item = "1";
+				tg.MainButton.show();
+			}
+		});
+
+		// Открытие ссылки на YouTube для btn2
+		btn2.addEventListener("click", function(){
+			window.location.href = 'https://www.youtube.com/watch?v=sUkN52vKik0&t=14s';
+		});
+
+		btn3.addEventListener("click", function(){
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText("Вы выбрали товар 3");
+				item = "3";
+				tg.MainButton.show();
+			}
+		});
+
+		btn4.addEventListener("click", function(){
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText("Вы выбрали товар 4");
+				item = "4";
+				tg.MainButton.show();
+			}
+		});
+
+		btn5.addEventListener("click", function(){
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText("Вы выбрали товар 5");
+				item = "5";
+				tg.MainButton.show();
+			}
+		});
+
+		btn6.addEventListener("click", function(){
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText("Вы выбрали товар 6");
+				item = "6";
+				tg.MainButton.show();
+			}
+		});
+
+		// Отправка данных при нажатии MainButton
+		Telegram.WebApp.onEvent("mainButtonClicked", function(){
+			tg.sendData(item);
+		});
+
+		// Отображение информации о пользователе
+		let usercard = document.getElementById("usercard");
+		let p = document.createElement("p");
+		p.innerText = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name} ID: ${tg.initDataUnsafe.user.id}`;
+		usercard.appendChild(p);
+	</script>
 </body>
 </html>
 
