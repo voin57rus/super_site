@@ -29,7 +29,7 @@ btn2.addEventListener("click", function(){
     if (tg.MainButton.isVisible) {
         tg.MainButton.hide();
     } else {
-        tg.MainButton.setText("Ссылка на видео");
+        tg.MainButton.setText("Ссылка");
         item = "https://youtu.be/S5IAs-wWKCA";
         tg.MainButton.show();
     }
