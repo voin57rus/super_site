@@ -85,8 +85,13 @@ Telegram.WebApp.onEvent("mainButtonClicked", function(){
 
 // Отображение информации о пользователе
 let usercard = document.getElementById("usercard");
+
 let p = document.createElement("p");
 
-p.innerText = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name} ID: ${tg.initDataUnsafe.user.id}`;
+// Отображаем имя, фамилию и ID пользователя
+p.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.last_name}
+ID: ${tg.initDataUnsafe.user.id}`;
+
 usercard.appendChild(p);
 
