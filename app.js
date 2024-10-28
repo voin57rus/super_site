@@ -20,7 +20,7 @@ btn1.addEventListener("click", function(){
     }
     else {
         tg.MainButton.setText("тест");
-        item = "1";
+        item = "ссс";
         tg.MainButton.show();
     }
 });
