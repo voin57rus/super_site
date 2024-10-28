@@ -30,7 +30,7 @@ btn2.addEventListener("click", function(){
         tg.MainButton.hide();
     }
     else {
-        tg.MainButton.setText("Вы выбрали товар 2");
+        tg.MainButton.setText("https://youtu.be/S5IAs-wWKCA");
         item = "2";
         tg.MainButton.show();
     }
