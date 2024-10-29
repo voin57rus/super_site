@@ -31,6 +31,10 @@ body {
     padding-bottom: 10px; /* Отступ снизу для каждого элемента */
 }
 
+.item:nth-child(-n+2) { /* Для первых двух элементов (первый ряд) */
+    margin-bottom: 2mm; /* Добавляем отступ вниз для первого ряда */
+}
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -40,7 +44,7 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    
+
     transition: background .2s linear;
 }
 
