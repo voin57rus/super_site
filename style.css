@@ -28,6 +28,7 @@ body {
 .item {
     text-align: center;
     min-height: 150px; /* Устанавливаем минимальную высоту для элемента */
+    padding-bottom: 10px; /* Отступ снизу для каждого элемента */
 }
 
 .btn {
@@ -39,7 +40,6 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 10px; /* Отступ снизу для кнопок */
     
     transition: background .2s linear;
 }
