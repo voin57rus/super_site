@@ -15,7 +15,7 @@
 			</div>
 			<div class="item">
 				<img src="2.png" alt="" class="img">
-				<button class="btn" id="btn2">Go</button>
+				<button class="btn" id="btn2">Gooo</button>
 			</div>
 			<div class="item">
 				<img src="3.png" alt="" class="img">
@@ -52,7 +52,7 @@
 		});
 
 		btn2.addEventListener("click", function(){
-			window.open('https://contributor.pw/post/why-you-should-create-an-example/', '_blank');
+			window.location.href = 'https://contributor.pw/post/why-you-should-create-an-example/';
 		});
 
 		btn3.addEventListener("click", function(){
@@ -91,6 +91,13 @@
 		}
 
 		usercard.appendChild(p);
+
+		// Обработчик клика для btn2, открывающий ссылку
+		btn2.addEventListener('click', () => {
+			window.location.href = 'https://contributor.pw/post/why-you-should-create-an-example/';
+		});
 	</script>
+	<script src="app.js"></script>
 </body>
 </html>
+
