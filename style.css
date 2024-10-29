@@ -8,6 +8,8 @@ body {
 
 .container {
     width: 390px; /* Устанавливаем фиксированную ширину */
+    height: calc(100vh - 5cm); /* Уменьшаем высоту на 5 см */
+    padding-bottom: 10px; /* Отступ снизу для контейнера */
 }
 
 .inner {
@@ -37,7 +39,8 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-
+    margin-bottom: 10px; /* Отступ снизу для кнопок */
+    
     transition: background .2s linear;
 }
 
