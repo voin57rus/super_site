@@ -74,6 +74,10 @@
 				// Нажатие MainButton открывает связанный контент
 				//Telegram.WebApp.onEvent("mainButtonClicked", function(){
 					//window.open(url, '_blank');
+				Telegram.WebApp.onEvent("mainButtonClicked", function(){
+                                     window.location.href = url; // Открывает ссылку в том же окне
+
+
 				});
 			}
 		}
