@@ -25,14 +25,6 @@
 				<img src="1.png" alt="" class="img">
 				<button class="btn" id="btn4">Add</button>
 			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn5">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn6">Add</button>
-			</div>
 		</div>
 	</div>
 	<div class="usercard" id="usercard"></div>
@@ -53,50 +45,38 @@
 		let btn2 = document.getElementById("btn2");
 		let btn3 = document.getElementById("btn3");
 		let btn4 = document.getElementById("btn4");
-		let btn5 = document.getElementById("btn5");
-		let btn6 = document.getElementById("btn6");
 
-		// Обработчики для каждой кнопки
+		// Обработчики для кнопок
 		btn1.addEventListener("click", function(){
-			toggleMainButton("Вы выбрали товар 1", "1");
+			showContent("Вы выбрали товар 1", "https://example.com/item1");
 		});
 
 		btn2.addEventListener("click", function(){
-                     window.open('https://github.com/voin57rus/super_site/blob/main/index.html');
-                });
-
+			window.open('https://contributor.pw/post/why-you-should-create-an-example/', '_blank');
+		});
 
 		btn3.addEventListener("click", function(){
-			toggleMainButton("Вы выбрали товар 3", "3");
+			showContent("Вы выбрали товар 3", "https://example.com/item3");
 		});
 
 		btn4.addEventListener("click", function(){
-			toggleMainButton("Вы выбрали товар 4", "4");
+			showContent("Вы выбрали товар 4", "https://example.com/item4");
 		});
 
-		btn5.addEventListener("click", function(){
-			toggleMainButton("Вы выбрали товар 5", "5");
-		});
-
-		btn6.addEventListener("click", function(){
-			toggleMainButton("Вы выбрали товар 6", "6");
-		});
-
-		// Функция для управления MainButton
-		function toggleMainButton(text, itemValue) {
+		// Функция для отображения контента
+		function showContent(text, url) {
 			if (tg.MainButton.isVisible) {
 				tg.MainButton.hide();
 			} else {
 				tg.MainButton.setText(text);
-				item = itemValue;
 				tg.MainButton.show();
+
+				// Нажатие MainButton открывает связанный контент
+				Telegram.WebApp.onEvent("mainButtonClicked", function(){
+					window.open(url, '_blank');
+				});
 			}
 		}
-
-		// Отправка данных при нажатии основной кнопки
-		Telegram.WebApp.onEvent("mainButtonClicked", function(){
-			tg.sendData(item);
-		});
 
 		// Получаем элемент usercard и создаем параграф
 		let usercard = document.getElementById("usercard");
@@ -105,19 +85,12 @@
 		// Проверка наличия данных пользователя
 		if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
 			const { first_name, last_name, id } = tg.initDataUnsafe.user;
-			// Отображаем имя, фамилию и ID пользователя
 			p.innerText = `${first_name} ${last_name}\nВаш ID: ${id}`;
 		} else {
 			p.innerText = "Данные пользователя не найдены.";
 		}
 
 		usercard.appendChild(p);
-
-		// Обработчик клика для btn2, открывающий ссылку
-		btn2.addEventListener('click', () => {
-			window.location.href = 'https://contributor.pw/post/why-you-should-create-an-example/';
-		});
 	</script>
-	<script src="app.js"></script>
 </body>
 </html>
