@@ -13,7 +13,7 @@ body {
 .inner {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 140px 140px 140px;
+	grid-template-rows: 100px 100px 100px;
 }
 
 .img {
