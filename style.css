@@ -1,58 +1,48 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    color: var(--tg-theme-text-color);
-    background: var(--tg-theme-bg-color);
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
 }
 
 .container {
-    width: 390px; /* Устанавливаем фиксированную ширину */
-    height: calc(100vh - 5cm); /* Уменьшаем высоту на 5 см */
-    padding-bottom: 10px; /* Отступ снизу для контейнера */
+	max-width: 390px;
 }
 
 .inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto; /* Автоматическая высота строк */
-    gap: 10px; /* Промежуток между элементами */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 200px 200px 200px;
 }
 
 .img {
-    width: 150px;
-    max-height: 100px; /* Максимальная высота изображения */
-    object-fit: cover; /* Сохранение пропорций изображения */
+	width: 150px;
 }
 
 .item {
-    text-align: center;
-    min-height: 150px; /* Устанавливаем минимальную высоту для элемента */
-    padding-bottom: 10px; /* Отступ снизу для каждого элемента */
-}
-
-.item:nth-child(-n+2) { /* Для первых двух элементов (первый ряд) */
-    margin-bottom: 2mm; /* Добавляем отступ вниз для первого ряда */
+	text-align: center;
 }
 
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    background: rgb(248, 168, 24);
-    border-radius: 10px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	background: rgb(248, 168, 24);
+	border-radius: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
 
-    transition: background .2s linear;
+	transition: background .2s linear;
 }
 
 .btn:hover {
-    background: lightgreen;
+	background: lightgreen;
 }
 
 .usercard {
-    text-align: center;
+	text-align: center;
 }
+
 
