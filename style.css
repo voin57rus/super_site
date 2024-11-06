@@ -9,12 +9,18 @@ body {
 .container {
     max-width: 350px;
     height: calc(100vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
+    margin: 0 auto; /* Центрируем контейнер */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .inner {
-    display: grid;
-    grid-template-columns: 1fr; /* Одна колонка для изображения и кнопки */
-    grid-template-rows: 1fr auto; /* Строки: изображение займет половину высоты, а кнопка — вторую половину */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; /* Обеспечиваем заполнение всего контейнера */
 }
 
 .img {
@@ -25,6 +31,7 @@ body {
 
 .item {
     text-align: center;
+    width: 100%; /* Обеспечиваем, чтобы все элементы внутри item растягивались */
 }
 
 .btn {
