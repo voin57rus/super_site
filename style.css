@@ -8,7 +8,7 @@ body {
 
 .container {
     width: 100%;
-    height: calc(50vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
+    height: calc(20vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
