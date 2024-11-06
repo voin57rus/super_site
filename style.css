@@ -8,19 +8,19 @@ body {
 
 .container {
     max-width: 350px;
-    height: calc(100vh - 567px); /* Уменьшили высоту на 567 пикселей (~15 см) */
+    height: calc(100vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
 }
-
 
 .inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto; /* Настроили автоматическую высоту строк */
+    grid-template-columns: 1fr; /* Одна колонка для изображения и кнопки */
+    grid-template-rows: 1fr auto; /* Строки: изображение займет половину высоты, а кнопка — вторую половину */
 }
 
 .img {
-    width: 100%; /* Изображение теперь занимает всю ширину элемента-родителя */
-    height: auto; /* Сохраняет пропорции изображения */
+    width: 100%; /* Изображение займет всю ширину контейнера */
+    height: 50%; /* Изображение будет занимать половину высоты контейнера */
+    object-fit: cover; /* Обрезает изображение, чтобы оно заполнило пространство, сохраняя пропорции */
 }
 
 .item {
@@ -28,10 +28,11 @@ body {
 }
 
 .btn {
-    display: inline-block;
+    display: block; /* Блоковый элемент, чтобы кнопка растянулась на всю ширину */
+    width: 100%; /* Кнопка будет растягиваться на всю ширину контейнера */
     padding: 10px 20px;
     border: none;
-    background: rgb(248, 168, 25);
+    background: rgb(248, 168, 24); /* Оранжевый цвет */
     border-radius: 10px;
     color: #fff;
     text-transform: uppercase;
@@ -40,11 +41,9 @@ body {
 }
 
 .btn:hover {
-    background: lightgreen;
+    background: #2cab37; /* Травянисто-зеленый цвет при наведении */
 }
 
 .usercard {
     text-align: center;
 }
-
-
