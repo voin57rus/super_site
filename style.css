@@ -8,17 +8,18 @@ body {
 
 .container {
     max-width: 390px;
-    height: calc(100vh - 189px); /* Уменьшаем высоту контейнера на 5 см (примерно 189 пикселей) */
+    height: calc(100vh - 5cm); /* Уменьшили высоту контейнера на 5 см */
 }
 
 .inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px 200px; /* Высота строк остаётся прежней */
+    grid-template-rows: auto auto auto; /* Настроили автоматическую высоту строк */
 }
 
 .img {
-    width: 150px;
+    width: 100%; /* Изображение теперь занимает всю ширину элемента-родителя */
+    height: auto; /* Сохраняет пропорции изображения */
 }
 
 .item {
@@ -34,7 +35,6 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
-
     transition: background .2s linear;
 }
 
