@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 390px;
+    max-width: 350px;
     height: calc(100vh - 5cm); /* Уменьшили высоту контейнера на 5 см */
 }
 
