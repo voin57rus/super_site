@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 350px;
+    width: 100%; /* Убираем ограничение на максимальную ширину */
     height: calc(100vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
     margin: 0 auto; /* Центрируем контейнер */
     display: flex;
@@ -54,3 +54,4 @@ body {
 .usercard {
     text-align: center;
 }
+
