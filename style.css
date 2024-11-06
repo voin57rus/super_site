@@ -7,9 +7,9 @@ body {
 }
 
 .container {
-    width: 100%; /* Убираем ограничение на максимальную ширину */
+    width: 100%;
     height: calc(100vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
-    margin: 0 auto; /* Центрируем контейнер */
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,26 +20,26 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100%; /* Обеспечиваем заполнение всего контейнера */
+    height: 100%;
 }
 
 .img {
-    width: 100%; /* Изображение займет всю ширину контейнера */
-    height: 50%; /* Изображение будет занимать половину высоты контейнера */
-    object-fit: cover; /* Обрезает изображение, чтобы оно заполнило пространство, сохраняя пропорции */
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
 }
 
 .item {
     text-align: center;
-    width: 100%; /* Обеспечиваем, чтобы все элементы внутри item растягивались */
+    width: 100%;
 }
 
 .btn {
-    display: block; /* Блоковый элемент, чтобы кнопка растянулась на всю ширину */
-    width: 100%; /* Кнопка будет растягиваться на всю ширину контейнера */
+    display: block;
+    width: 100%;
     padding: 10px 20px;
     border: none;
-    background: rgb(248, 168, 24); /* Оранжевый цвет */
+    background: rgb(248, 168, 24);
     border-radius: 10px;
     color: #fff;
     text-transform: uppercase;
@@ -48,10 +48,11 @@ body {
 }
 
 .btn:hover {
-    background: #2cab37; /* Травянисто-зеленый цвет при наведении */
+    background: #2cab37;
 }
 
 .usercard {
     text-align: center;
+    margin-top: 20px; /* Добавляем отступ сверху, чтобы не перекрывать картинку */
 }
 
