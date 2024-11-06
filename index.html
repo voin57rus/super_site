@@ -65,26 +65,35 @@
 			}
 		}
 
-		// Получаем элемент usercard и создаем параграф
-		let usercard = document.getElementById("usercard");
-		let p = document.createElement("p");
-		let p1 = document.createElement("p");
+		// Получаем элемент usercard и создаем три параграфа
+let usercard = document.getElementById("usercard");
+let p1 = document.createElement("p"); // Для текста "Привет, бро!"
+let p2 = document.createElement("p"); // Для приветствия
+let p3 = document.createElement("p"); // Для ID
 
-		// Проверка наличия данных пользователя
-		if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
-			const { first_name, last_name, id } = tg.initDataUnsafe.user;
-			p.innerText = `${first_name} ${last_name}\nВаш ID: ${id}`;
-			p1.innerText = `привет`;
-		} else {
-			p.innerText = "Данные пользователя не найдены.";
-		}
+// Добавляем текст "Привет, бро!"
+p1.innerText = "Привет, бро!";
 
-		usercard.appendChild(p);
+// Проверка наличия данных пользователя
+if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+    const { first_name, last_name, id } = tg.initDataUnsafe.user;
+    p2.innerText = `Приветствую тебя, ${first_name} ${last_name}`;  // Приветствие
+    p3.innerText = `Ваш ID: ${id}`;  // ID на новой строке
+} else {
+    p2.innerText = "Данные пользователя не найдены.";  // Если данных нет
+    p3.innerText = "";  // Если данных нет, ID не показываем
+}
 
-		// Обработчик клика для btn1, открывающий ссылку
-		btn1.addEventListener('click', () => {
-			window.location.href = 'https://contributor.pw/post/why-you-should-create-an-example/';
-		});
+// Добавляем параграфы в usercard
+usercard.appendChild(p1); // Добавляем "Привет, бро!"
+usercard.appendChild(p2); // Добавляем приветствие
+usercard.appendChild(p3); // Добавляем ID
+
+// Обработчик клика для btn1, открывающий ссылку
+btn1.addEventListener('click', () => {
+    window.location.href = 'https://contributor.pw/post/why-you-should-create-an-example/';
+});
+
 	</script>
 	<script src="app.js"></script>
 </body>
