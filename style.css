@@ -8,8 +8,9 @@ body {
 
 .container {
     max-width: 350px;
-    height: calc(100vh - 5cm); /* Уменьшили высоту контейнера на 5 см */
+    height: calc(100vh - 567px); /* Уменьшили высоту на 567 пикселей (~15 см) */
 }
+
 
 .inner {
     display: grid;
