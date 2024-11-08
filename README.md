@@ -106,3 +106,107 @@
 	<script src="app.js"></script>
 </body>
 </html>
+////////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+    <div class="inner">
+        <div class="item">
+            <img src="1.jpg" alt="" class="img">
+            <button class="btn" id="btn1">Пример</button>
+        </div>
+        <div class="usercard" id="usercard"></div> <!-- Элемент usercard перемещен ниже -->
+    </div>
+</div>
+
+			
+		    </div>
+			
+		</div>
+	   </div>
+	</div>
+	<div class="usercard" id="usercard"></div>
+
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+		let tg = window.Telegram.WebApp;
+
+		tg.expand();
+
+		tg.MainButton.textColor = '#FFFFFF';
+		tg.MainButton.color = '#2cab37';
+
+		let item = "";
+
+		// Получаем кнопки
+		let btn1 = document.getElementById("btn1");
+		
+		// Обработчики для кнопок
+		btn1.addEventListener("click", function(){
+			showContent("смотри содержимое страницы", "https://contributor.pw/post/why-you-should-create-an-example/");
+		});
+
+		
+
+		// Функция для отображения контента
+		function showContent(text, url) {
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText(text);
+				tg.MainButton.show();
+
+				// Нажатие MainButton открывает связанный контент
+				//Telegram.WebApp.onEvent("mainButtonClicked", function(){
+					//window.open(url, '_blank');
+				Telegram.WebApp.onEvent("mainButtonClicked", function(){
+                                     window.location.href = url; // Открывает ссылку в том же окне
+
+				
+				});
+			}
+		}
+
+		// Получаем элемент usercard и создаем три параграфа
+let usercard = document.getElementById("usercard");
+let p1 = document.createElement("p"); // Для текста "Привет, бро!"
+let p2 = document.createElement("p"); // Для приветствия
+let p3 = document.createElement("p"); // Для ID
+
+// Добавляем текст любой
+p1.innerText = "🤖";
+
+// Проверка наличия данных пользователя
+if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+    const { first_name, last_name, id } = tg.initDataUnsafe.user;
+    p2.innerText = `Приветствую тебя, ${first_name} ${last_name}`;  // Приветствие
+    p3.innerText = `Ваш ID: ${id}`;  // ID на новой строке
+} else {
+    p2.innerText = "Данные пользователя не найдены.";  // Если данных нет
+    p3.innerText = "";  // Если данных нет, ID не показываем
+}
+
+// Добавляем параграфы в usercard
+usercard.appendChild(p1); // Добавляем текст любой
+usercard.appendChild(p2); // Добавляем приветствие
+usercard.appendChild(p3); // Добавляем ID
+
+// Обработчик клика для btn1, открывающий ссылку
+btn1.addEventListener('click', () => {
+    window.location.href = 'https://contributor.pw/post/why-you-should-create-an-example/';
+});
+
+	</script>
+	<script src="app.js"></script>
+</body>
+</html>
+
+
