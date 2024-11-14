@@ -41,9 +41,11 @@
 				tg.MainButton.show();
 
 				// Добавляем один обработчик события mainButtonClicked
-				Telegram.WebApp.onEvent("mainButtonClicked", function() {
-					window.open(url); // Откроет ссылку в новом окне
+				//Telegram.WebApp.onEvent("mainButtonClicked", function() {
 					//window.open(url, '_blank'); // Откроет ссылку в новом окне
+				//а этот в нутри 
+				Telegram.WebApp.onEvent("mainButtonClicked", function(){
+                                     window.location.href = url; // Открывает ссылку в том же окне
 				});
 			}
 		}
