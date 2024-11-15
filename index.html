@@ -5,72 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
-	<style>
-		/* Общие стили для контейнера */
-		.container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			gap: 20px; /* Отступы между элементами */
-			margin-top: 20px;
-			width: 100%; /* Убедитесь, что контейнер занимает всю ширину */
-		}
-
-		/* Стили для внутренних элементов */
-		.inner {
-			display: flex;
-			flex-direction: column; /* Изменили на вертикальное расположение */
-			gap: 20px; /* Отступы между кнопками */
-		}
-
-		/* Стили для каждого элемента */
-		.item {
-			display: flex;
-			flex-direction: column; /* Изменили на вертикальное расположение */
-			justify-content: center;
-			align-items: center;
-			gap: 10px; /* Отступы между картинкой и кнопками */
-			width: 100%; /* Контейнер занимает всю ширину */
-		}
-
-		/* Стили для изображения */
-		.img {
-			width: 100%; /* Картинка занимает всю ширину контейнера */
-			height: auto; /* Устанавливаем высоту изображения на 3 см */
-		}
-
-		/* Стили для кнопок */
-		.btn {
-			padding: 10px 20px;
-			background-color: #2cab37;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			font-size: 14px;
-			border-radius: 5px;
-		}
-
-		/* Стили для карточки пользователя */
-		.usercard {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: 30px;
-			padding: 10px;
-			background-color: #f2f2f2;
-			border-radius: 5px;
-			width: 250px;
-		}
-	</style>
 </head>
 <body>
 	<div class="container">
     	<div class="inner">
         	<div class="item">
-            	<img src="1.jpg" alt="" class="img"> <!-- Оставлена только одна картинка -->
+            	<img src="1.jpg" alt="" class="img">
             	<button class="btn" id="btn1">Смотреть</button>
-				<button class="btn" id="btn2">Другой пример</button> <!-- Вторая кнопка -->
         	</div>
         	<div class="usercard" id="usercard"></div>
     	</div>
@@ -85,21 +26,16 @@
 		tg.MainButton.textColor = '#FFFFFF';
 		tg.MainButton.color = '#2cab37';
 
-		// Получаем кнопки
+		let item = "";
 		let btn1 = document.getElementById("btn1");
-		let btn2 = document.getElementById("btn2");
 
-		// Обработчик для первой кнопки
 		btn1.addEventListener("click", function() {
+			//showContent("Смотри как создать пример", "https://contributor.pw/post/why-you-should-create-an-example/");
+			//showContent("Смотри как создать пример", "https://voin57rus.github.io/video.mp4");
+		
 			showContent("Смотри как создать пример", "https://drive.google.com/file/d/1r1uVs7uE6ksm0QIJ_FnyB82HDmZbhg1P/view?usp=drive_link");
 		});
 
-		// Обработчик для второй кнопки
-		btn2.addEventListener("click", function() {
-			showContent("Смотри другой пример", "https://example.com/another-example");
-		});
-
-		// Функция для отображения контента
 		function showContent(text, url) {
 			if (tg.MainButton.isVisible) {
 				tg.MainButton.hide();
@@ -107,9 +43,12 @@
 				tg.MainButton.setText(text);
 				tg.MainButton.show();
 
-				// Нажатие MainButton открывает связанный контент
+				// Добавляем один обработчик события mainButtonClicked
+				//Telegram.WebApp.onEvent("mainButtonClicked", function() {
+					//window.open(url, '_blank'); // Откроет ссылку в новом окне
+				//а этот в нутри 
 				Telegram.WebApp.onEvent("mainButtonClicked", function(){
-					window.location.href = url; // Открывает ссылку в том же окне
+                                     window.location.href = url; // Открывает ссылку в том же окне
 				});
 			}
 		}
@@ -140,4 +79,3 @@
 	<script src="app.js"></script>
 </body>
 </html>
-
