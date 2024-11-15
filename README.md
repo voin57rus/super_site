@@ -209,4 +209,86 @@ btn1.addEventListener('click', () => {
 </body>
 </html>
 
+/////////////////
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+    	<div class="inner">
+        	<div class="item">
+            	<img src="1.jpg" alt="" class="img">
+            	<button class="btn" id="btn1">Смотреть</button>
+        	</div>
+        	<div class="usercard" id="usercard"></div>
+    	</div>
+	</div>
+
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+		let tg = window.Telegram.WebApp;
+
+		tg.expand();
+
+		tg.MainButton.textColor = '#FFFFFF';
+		tg.MainButton.color = '#2cab37';
+
+		let item = "";
+		let btn1 = document.getElementById("btn1");
+
+		btn1.addEventListener("click", function() {
+			//showContent("Смотри как создать пример", "https://contributor.pw/post/why-you-should-create-an-example/");
+			//showContent("Смотри как создать пример", "https://voin57rus.github.io/video.mp4");
+		
+			showContent("Смотри как создать пример", "https://drive.google.com/file/d/1r1uVs7uE6ksm0QIJ_FnyB82HDmZbhg1P/view?usp=drive_link");
+		});
+
+		function showContent(text, url) {
+			if (tg.MainButton.isVisible) {
+				tg.MainButton.hide();
+			} else {
+				tg.MainButton.setText(text);
+				tg.MainButton.show();
+
+				// Добавляем один обработчик события mainButtonClicked
+				//Telegram.WebApp.onEvent("mainButtonClicked", function() {
+					//window.open(url, '_blank'); // Откроет ссылку в новом окне
+				//а этот в нутри 
+				Telegram.WebApp.onEvent("mainButtonClicked", function(){
+                                     window.location.href = url; // Открывает ссылку в том же окне
+				});
+			}
+		}
+
+		// Создаем элементы usercard
+		let usercard = document.getElementById("usercard");
+		let p1 = document.createElement("p");
+		let p2 = document.createElement("p");
+		let p3 = document.createElement("p");
+
+		p1.innerText = "🤖";
+
+		// Проверка данных пользователя
+		if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+			const { first_name, last_name, id } = tg.initDataUnsafe.user;
+			p2.innerText = `Приветствую тебя, ${first_name} ${last_name}`;
+			p3.innerText = `Ваш ID: ${id}`;
+		} else {
+			p2.innerText = "Данные пользователя не найдены.";
+			p3.innerText = "";
+		}
+
+		// Добавляем параграфы в usercard
+		usercard.appendChild(p1);
+		usercard.appendChild(p2);
+		usercard.appendChild(p3);
+	</script>
+	<script src="app.js"></script>
+</body>
+</html>
