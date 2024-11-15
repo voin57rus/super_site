@@ -292,3 +292,64 @@ btn1.addEventListener('click', () => {
 	<script src="app.js"></script>
 </body>
 </html>
+//для него стиль 
+/*
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+}
+
+.container {
+    width: 100%;
+    height: calc(20vh - 567px); /* Уменьшаем высоту на 567px (~15 см) */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.item {
+    text-align: center;
+    width: 100%;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(248, 168, 24);
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background .2s linear;
+}
+
+.btn:hover {
+    background: #2cab37;
+}
+
+.usercard {
+    text-align: center;
+    margin-top: 10px; /* Добавляем отступ сверху для элемента с информацией */
+}
+
+*/
