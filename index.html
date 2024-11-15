@@ -12,6 +12,7 @@
         	<div class="item">
             	<img src="1.jpg" alt="" class="img">
             	<button class="btn" id="btn1">Смотреть</button>
+				<button class="btn" id="btn2">Другой пример</button> <!-- Вторая кнопка -->
         	</div>
         	<div class="usercard" id="usercard"></div>
     	</div>
@@ -26,16 +27,21 @@
 		tg.MainButton.textColor = '#FFFFFF';
 		tg.MainButton.color = '#2cab37';
 
-		let item = "";
+		// Получаем кнопки
 		let btn1 = document.getElementById("btn1");
+		let btn2 = document.getElementById("btn2");
 
+		// Обработчик для первой кнопки
 		btn1.addEventListener("click", function() {
-			//showContent("Смотри как создать пример", "https://contributor.pw/post/why-you-should-create-an-example/");
-			//showContent("Смотри как создать пример", "https://voin57rus.github.io/video.mp4");
-		
 			showContent("Смотри как создать пример", "https://drive.google.com/file/d/1r1uVs7uE6ksm0QIJ_FnyB82HDmZbhg1P/view?usp=drive_link");
 		});
 
+		// Обработчик для второй кнопки
+		btn2.addEventListener("click", function() {
+			showContent("Смотри другой пример", "https://example.com/another-example");
+		});
+
+		// Функция для отображения контента
 		function showContent(text, url) {
 			if (tg.MainButton.isVisible) {
 				tg.MainButton.hide();
@@ -43,12 +49,9 @@
 				tg.MainButton.setText(text);
 				tg.MainButton.show();
 
-				// Добавляем один обработчик события mainButtonClicked
-				//Telegram.WebApp.onEvent("mainButtonClicked", function() {
-					//window.open(url, '_blank'); // Откроет ссылку в новом окне
-				//а этот в нутри 
+				// Нажатие MainButton открывает связанный контент
 				Telegram.WebApp.onEvent("mainButtonClicked", function(){
-                                     window.location.href = url; // Открывает ссылку в том же окне
+					window.location.href = url; // Открывает ссылку в том же окне
 				});
 			}
 		}
