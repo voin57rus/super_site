@@ -6,88 +6,79 @@
 	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
 	<style>
-		/* Общие стили для контейнера */
-		.container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			gap: 20px; /* Отступы между элементами */
-			margin-top: 20px;
-			width: 100%; /* Убедитесь, что контейнер занимает всю ширину */
-		}
+		body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--tg-theme-text-color); /* Текст адаптируется под тему Telegram */
+    background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
+}
 
-		/* Стили для внутренних элементов */
-		.inner {
-			display: flex;
-			flex-direction: column; /* Изменили на вертикальное расположение */
-			gap: 20px; /* Отступы между кнопками */
-		}
+.container {
+    width: 100%;
+    height: 100vh; /* Контейнер занимает всю высоту экрана */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем содержимое вертикально */
+    align-items: center; /* Центрируем содержимое горизонтально */
+}
 
-		/* Стили для каждого элемента */
-		.item {
-			display: flex;
-			flex-direction: column; /* Изменили на вертикальное расположение */
-			justify-content: center;
-			align-items: center;
-			gap: 10px; /* Отступы между картинкой и кнопками */
-			width: 100%; /* Контейнер занимает всю ширину */
-		}
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центрируем содержимое внутри */
+    gap: 20px; /* Отступы между элементами */
+    width: 100%; /* Занимает всю ширину */
+}
 
-		/* Стили для изображения */
-		.img {
-			width: 100%; /* Картинка занимает всю ширину контейнера */
-			height: auto; /* Устанавливаем высоту изображения на 3 см */
-		}
+.img {
+    width: 100%;
+    max-width: 400px; /* Ограничиваем максимальную ширину изображения */
+    height: auto;
+    border-radius: 8px; /* Скругленные углы для изображения */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Добавляем тень для красоты */
+}
 
-		<style>
-    <style>
-    /* Общие стили для контейнера */
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100vh; /* Контейнер занимает всю высоту экрана */
-        gap: 20px; /* Отступы между элементами */
-        margin: 0; /* Убираем внешние отступы */
-        width: 100%; /* Контейнер занимает всю ширину */
-        background-color: #000000; /* Черный фон для всего контейнера */
-        color: #ffffff; /* Белый текст по умолчанию */
-    }
+.item {
+    text-align: center;
+    width: 100%;
+}
 
-    /* Стили для карточки пользователя */
-    .usercard {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px; /* Отступы внутри блока */
-        background-color: #000000; /* Черный фон */
-        color: #ffffff; /* Белый текст */
-        border: 2px solid #ffffff; /* Белая рамка */
-        border-radius: 8px; /* Скругленные углы */
-        width: auto; /* Ширина подстраивается под содержимое */
-        text-align: center; /* Центрируем текст */
-        box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2); /* Добавляем тень для контраста */
-    }
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 200px; /* Ограничиваем максимальную ширину кнопки */
+    padding: 10px 20px;
+    border: none;
+    background: rgb(248, 168, 24); /* Основной цвет кнопки */
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s linear;
+}
 
-    /* Стили для кнопок */
-    .btn {
-        padding: 10px 20px;
-        background-color: #2cab37;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-size: 14px;
-        border-radius: 5px;
-    }
+.btn:hover {
+    background: #2cab37; /* Цвет при наведении */
+}
 
-    /* Стили для изображения */
-    .img {
-        width: 100%; /* Картинка занимает всю ширину контейнера */
-        height: auto;
-    }
+.usercard {
+    text-align: center;
+    margin-top: 10px; /* Отступ сверху */
+    padding: 20px;
+    background: var(--tg-theme-bg-color); /* Адаптируется под тему Telegram */
+    color: var(--tg-theme-text-color); /* Цвет текста из темы Telegram */
+    border: 1px solid var(--tg-theme-hint-color); /* Легкая рамка */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
+    width: auto;
+    max-width: 300px;
+}
+
 </style>
 
 </style>
