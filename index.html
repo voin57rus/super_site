@@ -58,21 +58,31 @@
 			}
 		}
 
-		// Получаем элемент usercard и создаем параграф
+		// Создаем элементы usercard
 		let usercard = document.getElementById("usercard");
-		let p = document.createElement("p");
+		let p1 = document.createElement("p");
+		let p2 = document.createElement("p");
+		let p3 = document.createElement("p");
 
-		// Проверка наличия данных пользователя
+		p1.innerText = "🤖";
+
+		// Проверка данных пользователя
 		if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
 			const { first_name, last_name, id } = tg.initDataUnsafe.user;
-			p.innerText = `${first_name} ${last_name}\nВаш ID: ${id}`;
+			p2.innerText = `Приветствую тебя, ${first_name} ${last_name}`;
+			p3.innerText = `Ваш ID: ${id}`;
 		} else {
-			p.innerText = "Данные пользователя не найдены.";
+			p2.innerText = "Данные пользователя не найдены.";
+			p3.innerText = "";
 		}
 
-		usercard.appendChild(p);
+		// Добавляем параграфы в usercard
+		usercard.appendChild(p1);
+		usercard.appendChild(p2);
+		usercard.appendChild(p3);
 	</script>
 	<script src="app.js"></script>
 </body>
 </html>
+
 
