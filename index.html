@@ -5,6 +5,66 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
+	<style>
+		/* Общие стили для контейнера */
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			gap: 20px; /* Отступы между элементами */
+			margin-top: 20px;
+		}
+
+		/* Стили для внутренних элементов */
+		.inner {
+			display: flex;
+			flex-direction: column;
+			gap: 10px; /* Отступы между кнопками */
+		}
+
+		/* Стили для каждого элемента */
+		.item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 10px; /* Отступы между картинкой и кнопкой */
+		}
+
+		/* Стили для изображений */
+		.img {
+			width: 50px; /* Размер изображения */
+			height: 50px; /* Размер изображения */
+		}
+
+		/* Стили для кнопок */
+		.btn {
+			padding: 10px 20px;
+			background-color: #2cab37;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 14px;
+			border-radius: 5px;
+		}
+
+		/* Отступ для второй кнопки, чтобы она была ниже */
+		#btn2 {
+			margin-top: 5px; /* Отступ для второй кнопки */
+		}
+
+		/* Стили для карточки пользователя */
+		.usercard {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 30px;
+			padding: 10px;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+			width: 250px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
