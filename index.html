@@ -22,7 +22,7 @@
             flex-direction: column;
             gap: 20px; /* Отступы между элементами */
             margin-top: 20px;
-            width: 100%; /* Контейнер занимает всю ширину */
+            width: calc(100% - 3cm); /* Уменьшаем ширину на 3 см */
         }
 
         /* Внутренний контейнер */
@@ -79,9 +79,9 @@
             padding: 20px;
             background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
             color: var(--tg-theme-text-color); /* Цвет текста */
-          //  border-radius: 8px; /* Скругленные углы */
+            border-radius: 8px; /* Скругленные углы */
             max-width: 300px; /* Максимальная ширина */
-           // box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
         }
     </style>
 </head>
