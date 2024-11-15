@@ -1,166 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
-	<style>
-		body {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    color: var(--tg-theme-text-color); /* Текст адаптируется под тему Telegram */
-    background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            color: var(--tg-theme-text-color); /* Текст адаптируется под тему Telegram */
+            background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
+        }
 
-             /* Общие стили для контейнера */
-		.container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			gap: 20px; /* Отступы между элементами */
-			margin-top: 20px;
-			width: 100%; /* Убедитесь, что контейнер занимает всю ширину */
-		}
+        /* Контейнер */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px; /* Отступы между элементами */
+            margin-top: 20px;
+            width: 100%; /* Контейнер занимает всю ширину */
+        }
 
-		/* Стили для внутренних элементов */
-		.inner {
-			display: flex;
-			flex-direction: column; /* Изменили на вертикальное расположение */
-			gap: 20px; /* Отступы между кнопками */
-		}
+        /* Внутренний контейнер */
+        .inner {
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение */
+            gap: 20px; /* Отступы между элементами */
+            align-items: center;
+            width: 100%; /* Вся ширина */
+        }
 
-		/* Стили для каждого элемента */
-		.item {
-			display: flex;
-			flex-direction: column; /* Изменили на вертикальное расположение */
-			justify-content: center;
-			align-items: center;
-			gap: 10px; /* Отступы между картинкой и кнопками */
-			width: 100%; /* Контейнер занимает всю ширину */
-		}
+        /* Элемент с изображением и кнопками */
+        .item {
+            display: flex;
+            flex-direction: column; /* Вертикальное расположение */
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Отступы между изображением и кнопками */
+            width: 100%; /* Контейнер занимает всю ширину */
+        }
 
-		/* Стили для изображения */
-		.img {
-			width: 100%; /* Картинка занимает всю ширину контейнера */
-			height: auto; /* Устанавливаем высоту изображения на 3 см */
-		}
+        /* Изображение */
+        .img {
+            width: 100%; /* Занимает всю ширину */
+            max-width: 400px; /* Максимальная ширина */
+            height: auto; /* Автоматическая высота */
+            border-radius: 8px; /* Скругленные углы */
+        }
 
-		/* Стили для кнопок */
-		.btn {
-			padding: 10px 20px;
-			background-color: #2cab37;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			font-size: 14px;
-			border-radius: 5px;
-		}
+        /* Кнопки */
+        .btn {
+            display: block;
+            width: 100%; /* Занимает всю ширину */
+            max-width: 200px; /* Ограничиваем максимальную ширину */
+            padding: 10px 20px;
+            background-color: #2cab37; /* Основной цвет */
+            color: #fff; /* Цвет текста */
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px; /* Скругленные углы */
+            text-align: center;
+        }
 
+        .btn:hover {
+            background-color: rgb(248, 168, 24); /* Цвет при наведении */
+        }
 
-
-.btn:hover {
-    background: #2cab37; /* Цвет при наведении */
-}
-
-.usercard {
-    text-align: center;
-    margin-top: 10px; /* Отступ сверху */
-    padding: 20px;
-    background: var(--tg-theme-bg-color); /* Адаптируется под тему Telegram */
-    color: var(--tg-theme-text-color); /* Цвет текста из темы Telegram */
-   // border: 1px solid var(--tg-theme-hint-color); /* Легкая рамка */
-   // border-radius: 8px; /* Скругленные углы */
-  //  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
-    width: auto;
-    max-width: 300px;
-}
-
-    
-
-</style>
-
-
-
-
-	
-
+        /* Информация о пользователе */
+        .usercard {
+            text-align: center;
+            margin-top: 10px;
+            padding: 20px;
+            background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
+            color: var(--tg-theme-text-color); /* Цвет текста */
+            border-radius: 8px; /* Скругленные углы */
+            max-width: 300px; /* Максимальная ширина */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-    	<div class="inner">
-        	<div class="item">
-            	<img src="1.jpg" alt="" class="img"> <!-- Оставлена только одна картинка -->
-            	<button class="btn" id="btn1">Смотреть</button>
-				<button class="btn" id="btn2">Другой пример</button> <!-- Вторая кнопка -->
-        	</div>
-        	<div class="usercard" id="usercard"></div>
-    	</div>
-	</div>
+    <div class="container">
+        <div class="inner">
+            <div class="item">
+                <img src="1.jpg" alt="Example Image" class="img">
+                <button class="btn" id="btn1">Смотреть</button>
+                <button class="btn" id="btn2">Другой пример</button>
+            </div>
+            <div class="usercard" id="usercard"></div>
+        </div>
+    </div>
 
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script>
-		let tg = window.Telegram.WebApp;
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
 
-		tg.expand();
+        tg.expand();
+        tg.MainButton.textColor = '#FFFFFF';
+        tg.MainButton.color = '#2cab37';
 
-		tg.MainButton.textColor = '#FFFFFF';
-		tg.MainButton.color = '#2cab37';
+        // Получаем кнопки
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
 
-		// Получаем кнопки
-		let btn1 = document.getElementById("btn1");
-		let btn2 = document.getElementById("btn2");
+        // Обработчик для первой кнопки
+        btn1.addEventListener("click", function () {
+            showContent("Смотри как создать пример", "https://drive.google.com/file/d/1r1uVs7uE6ksm0QIJ_FnyB82HDmZbhg1P/view?usp=drive_link");
+        });
 
-		// Обработчик для первой кнопки
-		btn1.addEventListener("click", function() {
-			showContent("Смотри как создать пример", "https://drive.google.com/file/d/1r1uVs7uE6ksm0QIJ_FnyB82HDmZbhg1P/view?usp=drive_link");
-		});
+        // Обработчик для второй кнопки
+        btn2.addEventListener("click", function () {
+            showContent("Смотри другой пример", "https://example.com/another-example");
+        });
 
-		// Обработчик для второй кнопки
-		btn2.addEventListener("click", function() {
-			showContent("Смотри другой пример", "https://example.com/another-example");
-		});
+        // Функция для отображения контента
+        function showContent(text, url) {
+            if (tg.MainButton.isVisible) {
+                tg.MainButton.hide();
+            } else {
+                tg.MainButton.setText(text);
+                tg.MainButton.show();
 
-		// Функция для отображения контента
-		function showContent(text, url) {
-			if (tg.MainButton.isVisible) {
-				tg.MainButton.hide();
-			} else {
-				tg.MainButton.setText(text);
-				tg.MainButton.show();
+                // Нажатие MainButton открывает связанный контент
+                Telegram.WebApp.onEvent("mainButtonClicked", function () {
+                    window.location.href = url;
+                });
+            }
+        }
 
-				// Нажатие MainButton открывает связанный контент
-				Telegram.WebApp.onEvent("mainButtonClicked", function(){
-					window.location.href = url; // Открывает ссылку в том же окне
-				});
-			}
-		}
+        // Создаем элементы usercard
+        let usercard = document.getElementById("usercard");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let p3 = document.createElement("p");
 
-		// Создаем элементы usercard
-		let usercard = document.getElementById("usercard");
-		let p1 = document.createElement("p");
-		let p2 = document.createElement("p");
-		let p3 = document.createElement("p");
+        p1.innerText = "🤖";
 
-		p1.innerText = "🤖";
+        // Проверка данных пользователя
+        if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+            const { first_name, last_name, id } = tg.initDataUnsafe.user;
+            p2.innerText = `Приветствую тебя, ${first_name} ${last_name}`;
+            p3.innerText = `Ваш ID: ${id}`;
+        } else {
+            p2.innerText = "Данные пользователя не найдены.";
+            p3.innerText = "";
+        }
 
-		// Проверка данных пользователя
-		if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
-			const { first_name, last_name, id } = tg.initDataUnsafe.user;
-			p2.innerText = `Приветствую тебя, ${first_name} ${last_name}`;
-			p3.innerText = `Ваш ID: ${id}`;
-		} else {
-			p2.innerText = "Данные пользователя не найдены.";
-			p3.innerText = "";
-		}
-
-		// Добавляем параграфы в usercard
-		usercard.appendChild(p1);
-		usercard.appendChild(p2);
-		usercard.appendChild(p3);
-	</script>
-	<script src="app.js"></script>
+        // Добавляем параграфы в usercard
+        usercard.appendChild(p1);
+        usercard.appendChild(p2);
+        usercard.appendChild(p3);
+    </script>
 </body>
 </html>
+
