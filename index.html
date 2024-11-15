@@ -14,6 +14,14 @@
     background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
 }
 
+                                 body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--tg-theme-text-color); /* Текст адаптируется под тему Telegram */
+    background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
+}
+
 .container {
     width: 100%;
     height: 100vh; /* Контейнер занимает всю высоту экрана */
@@ -46,16 +54,21 @@
     width: 100%;
 }
 
-/* Стили для кнопок */
-		.btn {
-			padding: 10px 20px;
-			background-color: #2cab37;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			font-size: 14px;
-			border-radius: 5px;
-		}
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 200px; /* Ограничиваем максимальную ширину кнопки */
+    padding: 10px 20px;
+    border: none;
+    background: rgb(248, 168, 24); /* Основной цвет кнопки */
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s linear;
+}
 
 .btn:hover {
     background: #2cab37; /* Цвет при наведении */
@@ -73,6 +86,8 @@
     width: auto;
     max-width: 300px;
 }
+
+    
 
 </style>
 
