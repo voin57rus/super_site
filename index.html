@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Video Example</title>
     <style>
         body {
             margin: 0;
@@ -53,30 +52,38 @@
         }
 
         /* Кнопки */
-        btn {
-			padding: 10px 20px;
-			background-color: #2cab37;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			font-size: 14px;
-			border-radius: 2px;
-		}
+        .btn {
+            padding: 10px 20px;
+            background-color: #2cab37;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 2px;
+        }
 
-
-        
         /* Стили для карточки пользователя */
-         .usercard {
+        .usercard {
             text-align: center;
             margin-top: 10px;
             padding: 20px;
-            background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
-            color: var(--tg-theme-text-color); /* Цвет текста */
-          //  border-radius: 8px; /* Скругленные углы */
-         //   max-width: 300px; /* Максимальная ширина */
-           // box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
+            background: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
         }
-	    
+
+        /* Стили для видео */
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .video {
+            width: 100%; /* Занимает всю ширину контейнера */
+            max-width: 400px; /* Максимальная ширина видео */
+            height: auto; /* Пропорциональная высота */
+            border-radius: 8px; /* Скругленные углы */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
+        }
     </style>
 </head>
 <body>
@@ -105,31 +112,28 @@
 
         // Обработчик для первой кнопки
         btn1.addEventListener("click", function () {
-          //  showContent("Смотри как создать пример", "https://drive.google.com/file/d/1r1uVs7uE6ksm0QIJ_FnyB82HDmZbhg1P/view?usp=drive_link");
-		//https://voin57rus.github.io/video.mp4/
-		 showContent("Смотри как создать пример", "https://voin57rus.github.io/video.mp4");
+            showContent("Смотри как создать пример", "https://voin57rus.github.io/video.mp4");
         });
 
         // Обработчик для второй кнопки
         btn2.addEventListener("click", function () {
-          //  showContent("Смотри другой пример", "https://voin57rus.github.io/video.mp4");
-		 showContent("Смотри почему стоит создать пример", "https://contributor.pw/post/why-you-should-create-an-example");
-		
+            showContent("Смотри почему стоит создать пример", "https://contributor.pw/post/why-you-should-create-an-example");
         });
 
         // Функция для отображения контента
         function showContent(text, url) {
-            if (tg.MainButton.isVisible) {
-                tg.MainButton.hide();
-            } else {
-                tg.MainButton.setText(text);
-                tg.MainButton.show();
-
-                // Нажатие MainButton открывает связанный контент
-                Telegram.WebApp.onEvent("mainButtonClicked", function () {
-                    window.location.href = url;
-                });
-            }
+            const content = `
+                <div class="video-container">
+                    <h3>${text}</h3>
+                    <video controls class="video">
+                        <source src="${url}" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            `;
+            // Заменяем содержимое контейнера .inner
+            const innerContainer = document.querySelector('.inner');
+            innerContainer.innerHTML = content;
         }
 
         // Создаем элементы usercard
@@ -157,5 +161,6 @@
     </script>
 </body>
 </html>
+
 
 
