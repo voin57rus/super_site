@@ -7,35 +7,48 @@
     <style>
         .video-container {
             text-align: center;
-            margin-top: 20px;
+            margin: 20px 0;
         }
 
-        video {
+        .video {
             width: 100%;
             max-width: 400px;
             height: auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        <video controls id="videoPlayer">
-            <source src="https://voin57rus.github.io/video.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
-        <p id="errorMessage" style="color: red; display: none;">Ошибка загрузки видео.</p>
+    <div class="container">
+        <div class="inner">
+            <button onclick="showContent('Тестовое видео', 'https://voin57rus.github.io/video.mp4')">Показать видео</button>
+        </div>
     </div>
 
     <script>
-        const video = document.getElementById("videoPlayer");
-        const errorMessage = document.getElementById("errorMessage");
+        function showContent(text, url) {
+            const content = `
+                <div class="video-container">
+                    <h3>${text}</h3>
+                    <video controls class="video" onloadeddata="handleVideoLoaded()" onerror="handleVideoError('${url}')">
+                        <source src="${url}" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            `;
+            const innerContainer = document.querySelector('.inner');
+            innerContainer.innerHTML = content;
+        }
 
-        video.onerror = () => {
-            console.error("Ошибка при загрузке видео.");
-            errorMessage.style.display = "block";
-        };
+        function handleVideoLoaded() {
+            console.log("Видео успешно загружено!");
+        }
+
+        function handleVideoError(url) {
+            console.error(`Ошибка загрузки видео: ${url}`);
+            alert(`Видео не загрузилось! Проверьте URL: ${url}`);
+        }
     </script>
 </body>
 </html>
