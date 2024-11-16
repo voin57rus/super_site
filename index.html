@@ -3,76 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Example</title>
+    <title>Video Debug</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-size: 18px;
-            color: var(--tg-theme-text-color); /* Текст адаптируется под тему Telegram */
-            background: var(--tg-theme-bg-color); /* Фон адаптируется под тему Telegram */
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+        .video-container {
+            text-align: center;
             margin-top: 20px;
         }
 
-        .video-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .video {
+        video {
             width: 100%;
             max-width: 400px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn {
-            padding: 10px 20px;
-            background-color: #2cab37;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 2px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <button class="btn" id="btn1">Смотреть видео</button>
-        <div id="video-wrapper"></div>
+    <div class="video-container">
+        <video controls id="videoPlayer">
+            <source src="https://voin57rus.github.io/video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <p id="errorMessage" style="color: red; display: none;">Ошибка загрузки видео.</p>
     </div>
 
     <script>
-        document.getElementById("btn1").addEventListener("click", function () {
-            const videoUrl = "https://voin57rus.github.io/video.mp4";
-            showContent("Пример видео", videoUrl);
-        });
+        const video = document.getElementById("videoPlayer");
+        const errorMessage = document.getElementById("errorMessage");
 
-        function showContent(title, url) {
-            const wrapper = document.getElementById("video-wrapper");
-            wrapper.innerHTML = `
-                <div class="video-container">
-                    <h3>${title}</h3>
-                    <video class="video" controls onerror="handleVideoError()">
-                        <source src="${url}" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
-                </div>
-            `;
-        }
-
-        function handleVideoError() {
-            alert("Ошибка загрузки видео. Проверьте URL или формат файла.");
-        }
+        video.onerror = () => {
+            console.error("Ошибка при загрузке видео.");
+            errorMessage.style.display = "block";
+        };
     </script>
 </body>
 </html>
